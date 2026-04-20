@@ -1,0 +1,9 @@
+antifilter-domains.lst
+uablacklist-domains.lst
+zaboronahelp-domains.lst
+SRS
+MRS
+JSON
+DAT
+geosite_data
+proto/__pycache__
