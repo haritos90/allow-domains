@@ -217,10 +217,14 @@ DOMAIN-SUFFIX,discord.store
 DOMAIN-SUFFIX,discord.tools
 DOMAIN-SUFFIX,discordactivities.com
 DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.io
 DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,discordapp.page.link
+DOMAIN-SUFFIX,discordcdn.com
 DOMAIN-SUFFIX,discordmerch.com
 DOMAIN-SUFFIX,discordpartygames.com
 DOMAIN-SUFFIX,discordsays.com
+DOMAIN-SUFFIX,discordstatus.com
 DOMAIN-SUFFIX,discours.io
 DOMAIN-SUFFIX,discourse-cdn.com
 DOMAIN-SUFFIX,dockhand.pro
@@ -351,6 +355,7 @@ DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,hackernoon.com
 DOMAIN-SUFFIX,hackmd.io
 DOMAIN-SUFFIX,halooglasi.com
+DOMAIN-SUFFIX,hammerandchisel.ssl.zendesk.com
 DOMAIN-SUFFIX,hangouts.googleapis.com
 DOMAIN-SUFFIX,hd-rezka.tv
 DOMAIN-SUFFIX,hdkinoteatr.com
