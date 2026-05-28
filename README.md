@@ -161,7 +161,7 @@ https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-out
 
 # Как обновлять
 
-`domains.csv` — **единственный файл**, который нужно редактировать. Все `.lst` и `-surge.list` файлы генерируются автоматически.
+`domains.csv` — **единственный файл**, который нужно редактировать: все 19 категорий и `russia-outside`. Все `.lst` и `-surge.list` файлы генерируются автоматически.
 
 ```bash
 # Обновить IP-диапазоны (требует интернет, ~30 сек):
