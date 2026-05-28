@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 """
-Утилита для управления списками доменов.
+Утилита для управления списками доменов и подсетей.
 
-Источник правды: domains.csv (domain, category)
+Источник правды: domains.csv (domain, category, mobile)
+IP-подсети: Subnets/IPv4/ и Subnets/IPv6/ (генерируются get-subnets.py)
 
 Команды:
-  python convert.py build   — пересобрать все файлы из domains.csv
-  python convert.py surge   — пересоздать *-surge.list файлы для Shadowrocket
-  python convert.py minus   — пересоздать Minus/ файлы для сплит-тоннелей
-  python convert.py all     — выполнить все три (рекомендуется)
+  python convert.py build    — пересобрать все файлы из domains.csv
+  python convert.py surge    — пересоздать *-surge.list файлы для Shadowrocket
+  python convert.py minus    — пересоздать Minus/ файлы для сплит-тоннелей
+  python convert.py subnets  — пересоздать Minus/ subnet-файлы (нужен Subnets/)
+  python convert.py all      — выполнить все (рекомендуется)
 """
 
-import csv, os, sys, glob
+import csv, ipaddress, os, sys, glob
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOMAINS_CSV = os.path.join(BASE_DIR, "domains.csv")
 
-# Порядок категорий (определяет нумерацию и порядок в README)
 CATEGORIES = [
     ("youtube",      "Categories/01-youtube"),
     ("discord",      "Categories/02-discord"),
@@ -39,6 +40,16 @@ CATEGORIES = [
     ("blocked",      "Categories/19-blocked"),
 ]
 CATEGORY_PATH = {slug: path for slug, path in CATEGORIES}
+
+# Категории, для которых генерируются subnet minus-файлы (slug, prefix, has_v6)
+SUBNET_CATEGORIES = [
+    ("discord",     "02-discord",     False),
+    ("meta",        "03-meta",        True),
+    ("telegram",    "04-telegram",    True),
+    ("twitter",     "05-twitter",     True),
+    ("google-meet", "08-google-meet", False),
+    ("hodca",       "14-hodca",       True),
+]
 
 
 def read_csv():
@@ -71,24 +82,34 @@ def build():
     print(f"[build] Russia/russia-all.lst: {len(all_domains)}")
 
 
+def _is_ip_cidr(s):
+    try:
+        ipaddress.ip_network(s, strict=False)
+        return True
+    except ValueError:
+        return False
+
+
 def to_surge(lst_file, out_file):
-    domains = []
+    entries = []
     with open(lst_file, encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if line and not line.startswith("#"):
-                domains.append(line)
-    if not domains:
+                entries.append(line)
+    if not entries:
         return 0
     with open(out_file, "w", encoding="utf-8") as f:
-        for d in domains:
-            if d.startswith("."):
-                d = d[1:]
-            if d[0].isdigit() or "/" in d:
-                f.write(f"IP-CIDR,{d}\n")
+        for e in entries:
+            if e.startswith("."):
+                e = e[1:]
+            if _is_ip_cidr(e):
+                net = ipaddress.ip_network(e, strict=False)
+                tag = "IP-CIDR6" if net.version == 6 else "IP-CIDR"
+                f.write(f"{tag},{e}\n")
             else:
-                f.write(f"DOMAIN-SUFFIX,{d}\n")
-    return len(domains)
+                f.write(f"DOMAIN-SUFFIX,{e}\n")
+    return len(entries)
 
 
 def generate_surge():
@@ -125,6 +146,53 @@ def generate_minus():
         print(f"[minus] Minus/minus-{num}-{slug}.lst: {len(remainder)}")
 
 
+def _read_subnet_lst(path):
+    if not os.path.exists(path):
+        return set()
+    entries = set()
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                entries.add(line)
+    return entries
+
+
+def generate_subnet_minus():
+    subnets_dir = os.path.join(BASE_DIR, "Subnets")
+    if not os.path.isdir(subnets_dir):
+        print("[subnet-minus] Subnets/ не найден — сначала запустите get-subnets.py")
+        return
+
+    minus_dir = os.path.join(BASE_DIR, "Minus")
+    os.makedirs(minus_dir, exist_ok=True)
+
+    for version, v_suffix in [("IPv4", "v4"), ("IPv6", "v6")]:
+        ver_dir = os.path.join(subnets_dir, version)
+        if not os.path.isdir(ver_dir):
+            continue
+
+        all_entries = set()
+        for _, prefix, has_v6 in SUBNET_CATEGORIES:
+            if version == "IPv6" and not has_v6:
+                continue
+            all_entries |= _read_subnet_lst(os.path.join(ver_dir, f"{prefix}.lst"))
+
+        if not all_entries:
+            continue
+
+        for _, prefix, has_v6 in SUBNET_CATEGORIES:
+            if version == "IPv6" and not has_v6:
+                continue
+            cat_entries = _read_subnet_lst(os.path.join(ver_dir, f"{prefix}.lst"))
+            if not cat_entries:
+                continue
+            remainder = all_entries - cat_entries
+            out_path = os.path.join(minus_dir, f"minus-{prefix}-{v_suffix}")
+            write_lst(out_path, remainder)
+            print(f"[subnet-minus] Minus/minus-{prefix}-{v_suffix}.lst: {len(remainder)}")
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "all"
     if cmd == "build":
@@ -133,9 +201,12 @@ if __name__ == "__main__":
         generate_surge()
     elif cmd == "minus":
         generate_minus()
+    elif cmd == "subnets":
+        generate_subnet_minus()
     elif cmd == "all":
         build(); print()
         generate_minus(); print()
+        generate_subnet_minus(); print()
         generate_surge()
     else:
         print(__doc__)
