@@ -1,9 +1,9 @@
-IP-CIDR,24.kg
-IP-CIDR,3os.org
-IP-CIDR,4pda.to
-IP-CIDR,4pda.ws
-IP-CIDR,7dniv.rv.ua
-IP-CIDR,9tv.co.il
+DOMAIN-SUFFIX,24.kg
+DOMAIN-SUFFIX,3os.org
+DOMAIN-SUFFIX,4pda.to
+DOMAIN-SUFFIX,4pda.ws
+DOMAIN-SUFFIX,7dniv.rv.ua
+DOMAIN-SUFFIX,9tv.co.il
 DOMAIN-SUFFIX,a-vrv.akamaized.net
 DOMAIN-SUFFIX,abercrombie.com
 DOMAIN-SUFFIX,acclaimedvideogames.com
@@ -422,7 +422,6 @@ DOMAIN-SUFFIX,holod.media
 DOMAIN-SUFFIX,home-connect.com
 DOMAIN-SUFFIX,home.by.me
 DOMAIN-SUFFIX,hostero.eu
-DOMAIN-SUFFIX,hosthatch.com
 DOMAIN-SUFFIX,hostinger.com
 DOMAIN-SUFFIX,hotels.com
 DOMAIN-SUFFIX,housebrand.com

@@ -1,11 +1,11 @@
 DOMAIN-SUFFIX,ua
-IP-CIDR,10minutemail.com
-IP-CIDR,1337x.to
-IP-CIDR,4freerussia.org
-IP-CIDR,4pna.com
-IP-CIDR,5sim.net
-IP-CIDR,7tv.app
-IP-CIDR,7tv.io
+DOMAIN-SUFFIX,10minutemail.com
+DOMAIN-SUFFIX,1337x.to
+DOMAIN-SUFFIX,4freerussia.org
+DOMAIN-SUFFIX,4pna.com
+DOMAIN-SUFFIX,5sim.net
+DOMAIN-SUFFIX,7tv.app
+DOMAIN-SUFFIX,7tv.io
 DOMAIN-SUFFIX,abook-club.ru
 DOMAIN-SUFFIX,academy.terrasoft.ua
 DOMAIN-SUFFIX,adguard.com
@@ -118,6 +118,7 @@ DOMAIN-SUFFIX,halooglasi.com
 DOMAIN-SUFFIX,hdkinoteatr.com
 DOMAIN-SUFFIX,hdstudio.org
 DOMAIN-SUFFIX,hostgator.com
+DOMAIN-SUFFIX,hosthatch.com
 DOMAIN-SUFFIX,iditelesombase.org
 DOMAIN-SUFFIX,iedb.org
 DOMAIN-SUFFIX,ign.com

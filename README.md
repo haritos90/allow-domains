@@ -53,6 +53,50 @@
 | russia-all | Все категории | 1456 | [russia-all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-all-surge.list) |
 | russia-outside | Российские сервисы, доступные только из РФ | 37 | [russia-outside.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside-surge.list) |
 
+# Подсети (IP-диапазоны)
+
+FakeIP работает только через DNS: роутер перехватывает DNS-запрос и направляет трафик в прокси. Но некоторые приложения — Telegram, Discord, Meta — прошивают IP-адреса напрямую в бинарник и DNS полностью обходят. Для них нужно маршрутизировать трафик по IP через поле **Remote Subnet Lists** в Podkop.
+
+Подсети есть только у 6 категорий — тех, где приложения используют хардкоженные IP.
+
+## IPv4
+
+| # | Категория | Подсетей | `.lst` | `-surge.list` |
+|---|-----------|----------|--------|---------------|
+| 02 | Discord | 8 | [02-discord.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/02-discord.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/02-discord-surge.list) |
+| 03 | Meta* | 68 | [03-meta.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/03-meta.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/03-meta-surge.list) |
+| 04 | Telegram | 8 | [04-telegram.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/04-telegram.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/04-telegram-surge.list) |
+| 05 | Twitter / X / Grok | 13 | [05-twitter.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/05-twitter.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/05-twitter-surge.list) |
+| 08 | Google Meet | 10 | [08-google-meet.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/08-google-meet.lst) | — |
+| 14 | H.O.D.C.A. | 990 | [14-hodca.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/14-hodca.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/14-hodca-surge.list) |
+| — | Все вместе | 1093 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all-surge.list) |
+
+## IPv6
+
+| # | Категория | Подсетей | `.lst` | `-surge.list` |
+|---|-----------|----------|--------|---------------|
+| 03 | Meta* | 42 | [03-meta.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/03-meta.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/03-meta-surge.list) |
+| 04 | Telegram | 4 | [04-telegram.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/04-telegram.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/04-telegram-surge.list) |
+| 05 | Twitter / X / Grok | 3 | [05-twitter.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/05-twitter.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/05-twitter-surge.list) |
+| 14 | H.O.D.C.A. | 60 | [14-hodca.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/14-hodca.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/14-hodca-surge.list) |
+| — | Все вместе | 109 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all-surge.list) |
+
+**Minus-файлы для подсетей** (аналог доменных minus-файлов, для сплит-тоннелей):
+
+<details>
+<summary>Список</summary>
+
+| Категория | IPv4 Minus | IPv6 Minus |
+|-----------|-----------|-----------|
+| 02 discord | [minus-02-discord-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-02-discord-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-02-discord-v4-surge.list) | — |
+| 03 meta | [minus-03-meta-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-03-meta-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-03-meta-v4-surge.list) | [minus-03-meta-v6.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-03-meta-v6.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-03-meta-v6-surge.list) |
+| 04 telegram | [minus-04-telegram-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-04-telegram-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-04-telegram-v4-surge.list) | [minus-04-telegram-v6.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-04-telegram-v6.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-04-telegram-v6-surge.list) |
+| 05 twitter | [minus-05-twitter-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-05-twitter-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-05-twitter-v4-surge.list) | [minus-05-twitter-v6.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-05-twitter-v6.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-05-twitter-v6-surge.list) |
+| 08 google-meet | [minus-08-google-meet-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-08-google-meet-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-08-google-meet-v4-surge.list) | — |
+| 14 hodca | [minus-14-hodca-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-14-hodca-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-14-hodca-v4-surge.list) | [minus-14-hodca-v6.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-14-hodca-v6.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-14-hodca-v6-surge.list) |
+
+</details>
+
 # Три сценария блокировки
 
 ## Сценарий 1 — В России, заблокировать всё сразу
@@ -61,6 +105,15 @@
 
 ```
 https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-all.lst
+```
+
+Для сервисов с хардкоженными IP дополнительно указать в поле **Remote Subnet Lists**:
+
+```
+https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.lst
+```
+```
+https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst
 ```
 
 ## Сценарий 2 — В России, блокировать прицельно
@@ -120,7 +173,10 @@ https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-out
 `domains.csv` — **единственный файл**, который нужно редактировать. Все `.lst` и `-surge.list` файлы генерируются автоматически.
 
 ```bash
-# После редактирования domains.csv:
+# Обновить IP-диапазоны (требует интернет, ~30 сек):
+python3 get-subnets.py
+
+# После редактирования domains.csv или обновления подсетей:
 python3 convert.py all
 git add -A
 git commit -m "Update domains"

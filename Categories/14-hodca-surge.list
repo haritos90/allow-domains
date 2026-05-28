@@ -1,4 +1,4 @@
-IP-CIDR,3os.org
+DOMAIN-SUFFIX,3os.org
 DOMAIN-SUFFIX,acclaimedvideogames.com
 DOMAIN-SUFFIX,adbappcontrol.com
 DOMAIN-SUFFIX,adobedtm.com
@@ -90,7 +90,6 @@ DOMAIN-SUFFIX,heltec.org
 DOMAIN-SUFFIX,hetzner.cloud
 DOMAIN-SUFFIX,hetzner.com
 DOMAIN-SUFFIX,hostero.eu
-DOMAIN-SUFFIX,hosthatch.com
 DOMAIN-SUFFIX,howtogeek.com
 DOMAIN-SUFFIX,htx.com
 DOMAIN-SUFFIX,huggingface.co
