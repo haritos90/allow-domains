@@ -37,9 +37,13 @@ CATEGORIES = [
     ("news",         "Categories/16-news"),
     ("anime",        "Categories/17-anime"),
     ("adult",        "Categories/18-adult"),
-    ("blocked",      "Categories/19-blocked"),
+    ("blocked",         "Categories/19-blocked"),
+    ("russia-outside",  "Russia/russia-outside"),
 ]
 CATEGORY_PATH = {slug: path for slug, path in CATEGORIES}
+
+# Категории, не входящие в russia-all и Minus-файлы
+RUSSIA_ALL_EXCLUDE = {"russia-outside"}
 
 # Категории, для которых генерируются subnet minus-файлы (slug, prefix, has_v6)
 SUBNET_CATEGORIES = [
@@ -77,7 +81,7 @@ def build():
         write_lst(full, domains)
         print(f"[build] {path}.lst: {len(domains)}")
 
-    all_domains = [r["domain"] for r in rows]
+    all_domains = [r["domain"] for r in rows if r["category"] not in RUSSIA_ALL_EXCLUDE]
     write_lst(os.path.join(BASE_DIR, "Russia", "russia-all"), all_domains)
     print(f"[build] Russia/russia-all.lst: {len(all_domains)}")
 
@@ -128,10 +132,11 @@ def generate_surge():
 
 def generate_minus():
     rows = read_csv()
-    all_domains = set(r["domain"] for r in rows)
+    all_domains = set(r["domain"] for r in rows if r["category"] not in RUSSIA_ALL_EXCLUDE)
     by_cat = {}
     for r in rows:
-        by_cat.setdefault(r["category"], set()).add(r["domain"])
+        if r["category"] not in RUSSIA_ALL_EXCLUDE:
+            by_cat.setdefault(r["category"], set()).add(r["domain"])
 
     minus_dir = os.path.join(BASE_DIR, "Minus")
     os.makedirs(minus_dir, exist_ok=True)
