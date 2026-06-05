@@ -1,0 +1,45 @@
+name: Update subnets
+
+# Раз в неделю обновляет IP-диапазоны (Subnets/) из официальных источников
+# (RIPE, Cloudflare, Telegram) и пересобирает зависимые surge- и Minus-файлы.
+
+on:
+  schedule:
+    - cron: '16 7 * * 1'   # понедельник, 07:16 UTC
+  workflow_dispatch:        # ручной запуск из вкладки Actions
+
+permissions:
+  contents: write
+
+jobs:
+  update-subnets:
+    runs-on: ubuntu-24.04
+    steps:
+      # checkout@v6 и setup-python@v6 работают на Node 24. Node 20 в GitHub
+      # Actions выводится из эксплуатации в 2026 — старые мажоры экшенов
+      # перестанут запускаться.
+      - uses: actions/checkout@v6.0.2
+
+      - uses: actions/setup-python@v6.2.0
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh subnets and rebuild lists
+        run: |
+          python3 get-subnets.py
+          python3 convert.py all
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Подсети не изменились — коммитить нечего."
+          else
+            git commit -m "chore: update subnets"
+            git push
+          fi

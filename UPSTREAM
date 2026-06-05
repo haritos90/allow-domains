@@ -1,8 +1,0 @@
-# Last synced upstream commit
-# https://github.com/itdoginfo/allow-domains
-#
-# To find new domains since this commit:
-#   git fetch upstream
-#   git diff f86644fe..upstream/main -- 'Services/*.lst' 'Categories/*.lst'
-
-f86644fe24422c7b11d139e2d9ec4afaea78fb64  2026-05-25 11:16:25 +0000  Update subnet
