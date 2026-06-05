@@ -1,3 +1,5 @@
+# Список доменов для блокировки
+
 Поможем провайдерам в эпоху дефицита сетевого оборудования: самостоятельно заблокируем ресурсы на своих роутерах и, таким образом, снизим нагрузку на их оборудование!
 
 Зарубежные сервисы пусть знают, что их ресурсы никому не нужны и мы сами у себя их блокируем!
@@ -6,6 +8,23 @@
 
 Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). В оригинале нельзя распределить сервисы по разным секциям Podkop — здесь это реализовано через Minus-файлы либо вручную собирая группы из непересакающихся доменов.  
 Списки сделаны для роутеров под OpenWRT (Podkop/sing-box) и iPhone (Shadowrocket).
+
+## Legal Notice
+
+This software is intended for development, testing, and research purposes only.
+
+The author does not provide any guarantees regarding:
+
+- availability of network access
+- compatibility with specific services
+- compliance with any external restrictions
+
+Users are solely responsible for how they use this software and must comply with applicable laws.
+
+**Usage Restrictions**
+
+This software is not intended to be used for bypassing access restrictions or violating applicable laws. The author does not support or encourage such use.
+
 
 # Форматы файлов
 
@@ -80,7 +99,7 @@ https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.
 https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst
 ```
 
-## Сценарий 2 — В России, блокировать прицельно
+## Сценарий 2 — В России, блокировать раздельно
 
 Когда на определенный сервис нужна отдельная секции Podkop. Важно: для сервисов с IP-подсетями нужно настраивать оба поля — **Remote Domain Lists** и **Remote Subnet Lists**. Если указать только домены, трафик приложения, которое использует фиксированные IP, обойдёт правило.
 
