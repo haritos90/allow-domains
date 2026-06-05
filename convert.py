@@ -2,7 +2,7 @@
 """
 Утилита для управления списками доменов и подсетей.
 
-Источник правды: domains.csv (domain, category, mobile)
+Источник правды: domains.csv (domain, category)
 IP-подсети: Subnets/IPv4/ и Subnets/IPv6/ (генерируются get-subnets.py)
 
 Команды:

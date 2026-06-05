@@ -1,11 +1,51 @@
-antifilter-domains.lst
-uablacklist-domains.lst
-zaboronahelp-domains.lst
-SRS
-MRS
-JSON
-DAT
-geosite_data
-proto/__pycache__
-__pycache__
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Editors / IDEs / tooling
+.idea/
+.vscode/
+.claude/
+*.swp
+*.swo
+*.orig
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Logs
+*.log
+
+# Environment / local
+.env
+.env.*
+!.env.example
+.local
+
+# Project-specific
+

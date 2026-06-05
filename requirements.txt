@@ -1,3 +1,1 @@
-tldextract
-protobuf>=6.32.1
 requests

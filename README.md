@@ -1,13 +1,13 @@
-# Список доменов для блокировки
+# Списки доменов для блокировки
 
 Поможем провайдерам в эпоху дефицита сетевого оборудования: самостоятельно заблокируем ресурсы на своих роутерах и, таким образом, снизим нагрузку на их оборудование!
 
 Зарубежные сервисы пусть знают, что их ресурсы никому не нужны и мы сами у себя их блокируем!
 
----
-
 Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). В оригинале нельзя распределить сервисы по разным секциям Podkop — здесь это реализовано через Minus-файлы либо вручную собирая группы из непересакающихся доменов.  
 Списки сделаны для роутеров под OpenWRT (Podkop/sing-box) и iPhone (Shadowrocket).
+
+---
 
 ## Legal Notice
 
@@ -21,10 +21,17 @@ The author does not provide any guarantees regarding:
 
 Users are solely responsible for how they use this software and must comply with applicable laws.
 
-**Usage Restrictions**
+## Usage Restrictions
 
 This software is not intended to be used for bypassing access restrictions or violating applicable laws. The author does not support or encourage such use.
 
+---
+
+## Status
+
+Alpha software — not intended for production use. The author sells nothing: not the app, access, configurations, subscriptions, or support; anything given is a voluntary donation.
+
+---
 
 # Форматы файлов
 
@@ -192,5 +199,20 @@ git add -A
 git commit -m "Update domains"
 git push
 ```
+
+# Сравнение списков доменов с upstream
+
+Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). Последняя проверка — коммит `46152bd` (2026-06-01): новых доменов в апстриме нет. Чтобы посмотреть, какие домены добавили в апстрим с тех пор:
+
+```bash
+# Подключить апстрим как второй источник (один раз):
+git remote add upstream https://github.com/itdoginfo/allow-domains.git
+
+# Проверка:
+git fetch upstream
+git diff 46152bd..upstream/main -- 'Categories/*.lst' 'Services/*.lst'
+```
+
+Нужные домены из вывода переносятся вручную в `domains.csv`. После переноса обновить хеш `46152bd` на актуальный (`git rev-parse --short upstream/main`), чтобы следующее сравнение начиналось с новой точки.
 
 *Meta признана экстремистской и террористической организацией на территории РФ.
