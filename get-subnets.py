@@ -157,6 +157,58 @@ def fetch_hodca():
     return collapse(v4 + ripe_v4), collapse(v6 + ripe_v6)
 
 
+def fetch_zscaler():
+    """Собственные IP-диапазоны Zscaler (hub + CENR по всем облакам).
+
+    Покрывают и ZEN-узлы (ZIA), и ZPA-брокеры на инфраструктуре Zscaler.
+    Источник: config.zscaler.com (hubs/cidr/recommended + cenr).
+    """
+    v4, v6 = [], []
+    clouds = [
+        "zscaler.net", "zscalerone.net", "zscalertwo.net", "zscalerthree.net",
+        "zscloud.net", "zscalerten.net", "zscalerbeta.net",
+    ]
+
+    def add(prefix):
+        try:
+            net = ipaddress.ip_network(prefix, strict=False)
+            (v4 if net.version == 4 else v6).append(net)
+        except ValueError:
+            pass
+
+    for cloud in clouds:
+        # агрегированные hub-диапазоны (recommended)
+        r = requests.get(
+            f"https://config.zscaler.com/api/{cloud}/hubs/cidr/json/recommended",
+            headers=HEADERS, timeout=TIMEOUT,
+        )
+        r.raise_for_status()
+        for p in r.json().get("hubPrefixes", []):
+            add(p)
+
+        # детальные диапазоны узлов (Cloud Enforcement Node Ranges)
+        r = requests.get(
+            f"https://config.zscaler.com/api/{cloud}/cenr/json",
+            headers=HEADERS, timeout=TIMEOUT,
+        )
+        r.raise_for_status()
+        for conts in r.json().values():
+            if not isinstance(conts, dict):
+                continue
+            for cities in conts.values():
+                if not isinstance(cities, dict):
+                    continue
+                for entries in cities.values():
+                    if not isinstance(entries, list):
+                        continue
+                    for e in entries:
+                        if isinstance(e, dict) and e.get("range"):
+                            add(e["range"])
+        time.sleep(0.3)
+
+    return collapse(v4), collapse(v6)
+
+
 # (fetch_func, has_v6)
 BUILDERS = {
     "02-discord":     (fetch_discord,     False),
@@ -165,6 +217,7 @@ BUILDERS = {
     "05-twitter":     (fetch_twitter,     True),
     "08-google-meet": (fetch_google_meet, False),
     "14-hodca":       (fetch_hodca,       True),
+    "20-zscaler":     (fetch_zscaler,     True),
 }
 
 

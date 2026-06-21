@@ -53,6 +53,7 @@ SUBNET_CATEGORIES = [
     ("twitter",     "05-twitter",     True),
     ("google-meet", "08-google-meet", False),
     ("hodca",       "14-hodca",       True),
+    ("zscaler",     "20-zscaler",     True),
 ]
 
 
