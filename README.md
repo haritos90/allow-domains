@@ -50,7 +50,9 @@ Alpha software — not intended for production use. The author sells nothing: no
 
 Не все сервисы можно полностью заблокировать по доменам, некоторые обращаются к своим серверам напрямую по фиксированным IP, минуя DNS. Для таких сервисов одних доменов недостаточно: нужно дополнительно блокировать трафик по IP через поле **Remote Subnet Lists** в Podkop. Скрипт `get-subnets.py` получает актуальные IP-диапазоны из официальных источников (RIPE, Cloudflare, Telegram) и создает списки подсетей.
 
-У 6 категорий доменов есть соответствующие списки IP-подсетей. Для каждой из них предусмотрены и доменные, и subnet Minus-файлы — чтобы при разбивке по секциям Podkop домены и IP-диапазоны оставались согласованными.
+У 6 доменных категорий есть соответствующие списки IP-подсетей; для них предусмотрены и доменные, и subnet Minus-файлы — чтобы при разбивке по секциям Podkop домены и IP-диапазоны оставались согласованными.
+
+Отдельно есть категория **Zscaler** — только IP-подсети, без доменов. Zscaler Client Connector (ZIA-туннель и ZPA) гонит трафик на IP узлов/брокеров, а реальные домены спрятаны внутри TLS/DTLS-туннеля — поэтому ловить его можно только по IP-диапазонам. Для неё есть subnet Minus-файлы.
 
 Для категорий, к которым нет списков подсетей, блокировка возможна просто по доменному имени.
 
@@ -77,14 +79,15 @@ Alpha software — not intended for production use. The author sells nothing: no
 | 17 | Anime | Аниме | 41 · [lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/17-anime.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/17-anime-surge.list) | — | — |
 | 18 | Adult | Для взрослых | 50 · [lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/18-adult.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/18-adult-surge.list) | — | — |
 | 19 | Blocked | Всё остальное — домены, не вошедшие в другие категории | 334 · [lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/19-blocked.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/19-blocked-surge.list) | — | — |
+| 20 | Zscaler | Zscaler Client Connector (ZIA/ZPA) — узлы и брокеры, только по IP | — | 50 · [lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/20-zscaler.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/20-zscaler-surge.list) | 54 · [lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/20-zscaler.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/20-zscaler-surge.list) |
 
 # Сводные списки
 
 | Список | Описание | Записей | `.lst` | `-surge.list` |
 |--------|----------|---------|--------|---------------|
 | Все домены | Все 19 категорий | 1461 | [russia-all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-all-surge.list) |
-| Все подсети IPv4 | Discord, Meta*, Telegram, Twitter, Google Meet, H.O.D.C.A. | 1093 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all-surge.list) |
-| Все подсети IPv6 | Meta*, Telegram, Twitter, H.O.D.C.A. | 109 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all-surge.list) |
+| Все подсети IPv4 | Discord, Meta*, Telegram, Twitter, Google Meet, H.O.D.C.A., Zscaler | 1143 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all-surge.list) |
+| Все подсети IPv6 | Meta*, Telegram, Twitter, H.O.D.C.A., Zscaler | 163 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all-surge.list) |
 | russia-outside | Российские сервисы, доступные только из РФ | 41 | [russia-outside.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside-surge.list) |
 
 # Три сценария блокировки
@@ -170,6 +173,7 @@ Minus-файлы обеспечивают согласованность: дом
 | 05 twitter | [minus-05-twitter-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-05-twitter-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-05-twitter-v4-surge.list) | [minus-05-twitter-v6.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-05-twitter-v6.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-05-twitter-v6-surge.list) |
 | 08 google-meet | [minus-08-google-meet-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-08-google-meet-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-08-google-meet-v4-surge.list) | — |
 | 14 hodca | [minus-14-hodca-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-14-hodca-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-14-hodca-v4-surge.list) | [minus-14-hodca-v6.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-14-hodca-v6.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-14-hodca-v6-surge.list) |
+| 20 zscaler | [minus-20-zscaler-v4.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-20-zscaler-v4.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-20-zscaler-v4-surge.list) | [minus-20-zscaler-v6.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-20-zscaler-v6.lst) · [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Minus/minus-20-zscaler-v6-surge.list) |
 
 </details>
 
