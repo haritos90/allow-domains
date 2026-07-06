@@ -54,6 +54,7 @@ instagram.com,meta
 internalfb.com,meta
 meta.com,meta
 oculus.com,meta
+threads.com,meta
 threads.net,meta
 wa.me,meta
 whatsapp.biz,meta
@@ -197,6 +198,7 @@ claude.com,claude
 acclaimedvideogames.com,hodca
 adbappcontrol.com,hodca
 ajay.app,hodca
+allawnos.com,hodca
 alterportal.net,hodca
 amazon.com,hodca
 amazonaws.com,hodca
@@ -211,8 +213,11 @@ beatmods.com,hodca
 beatsaver.com,hodca
 bitbucket.org,hodca
 bitru.org,hodca
+bitvise.com,hodca
+blackhatworld.com,hodca
 britishcouncil.org,hodca
 bsmanager.io,hodca
+callfilter.app,hodca
 capcut.com,hodca
 capcutapi.com,hodca
 capcutstatic.com,hodca
@@ -233,15 +238,18 @@ clerk.dev,hodca
 clickup-attachments.com,hodca
 cloudflare.com,hodca
 cloudflarestatus.com,hodca
+cloudflarestorage.com,hodca
 cloudfront.net,hodca
 cloudns.net,hodca
 clubtv.pro,hodca
 cochrane.org,hodca
 coderabbit.ai,hodca
+consensus.app,hodca
 convertunits.com,hodca
 crdroid.net,hodca
 curseforge.com,hodca
 customfw.xyz,hodca
+d4c.nintendo.net,hodca
 desec.io,hodca
 dev.to,hodca
 digitalocean.com,hodca
@@ -250,6 +258,7 @@ discourse-cdn.com,hodca
 dockhand.pro,hodca
 dodopayments.com,hodca
 dosvid.tk,hodca
+dragons.nintendo.net,hodca
 drpool.io,hodca
 ds-servers.com,hodca
 dvprogram.state.gov,hodca
@@ -258,10 +267,12 @@ easysimplesolution.net,hodca
 edx.org,hodca
 elsevier.com,hodca
 elsevier.com.cdn.cloudflare.net,hodca
+eshop.nintendo.net,hodca
 ezgif.com,hodca
 fandom.com,hodca
 fedoraproject.org,hodca
 feeds.feedburner.com,hodca
+figshare.com,hodca
 filmix.my,hodca
 flathub.org,hodca
 flclash.cc,hodca
@@ -272,6 +283,8 @@ friendlyelec.com,hodca
 fwupd.org,hodca
 galaxy.ansible.com,hodca
 geekbench.com,hodca
+gitlab.com,hodca
+gizmochina.com,hodca
 gnome.org,hodca
 gopro.com,hodca
 grafana.net,hodca
@@ -281,6 +294,7 @@ helpdesk.com,hodca
 heltec.org,hodca
 hetzner.cloud,hodca
 hetzner.com,hodca
+higgsfield.ai,hodca
 hostero.eu,hodca
 howtogeek.com,hodca
 htx.com,hodca
@@ -292,6 +306,7 @@ imigo.ai,hodca
 inoreader.com,hodca
 iot334.com,hodca
 ipinfo.app,hodca
+irc-ws.chat.twitch.tv,hodca
 ixxx.com,hodca
 izzysoft.de,hodca
 jellyfin.org,hodca
@@ -309,11 +324,13 @@ livechat.com,hodca
 livechatinc.com,hodca
 llhost.eu,hodca
 localsend.org,hodca
+lowendtalk.com,hodca
 luadns.com,hodca
 magicalchemy.org,hodca
 manjaro.org,hodca
 maximoff.su,hodca
 mdpi.com,hodca
+media5.cdnbase.com,hodca
 mediafilez.forgecdn.net,hodca
 memepedia.ru,hodca
 meshtastic.org,hodca
@@ -335,12 +352,15 @@ openrailwaymap.org,hodca
 opensubtitles.org,hodca
 opentext.com,hodca
 openwrt.org,hodca
+opintopolku.fi,hodca
 ovh.ie,hodca
 ovhcloud.com,hodca
 pantone.com,hodca
 pastebin.com,hodca
 patterns.dev,hodca
+pdfcoffee.com,hodca
 pinata.cloud,hodca
+ping-admin.com,hodca
 pinia-colada.esm.dev,hodca
 pinterest.com,hodca
 plantuml.com,hodca
@@ -349,6 +369,7 @@ pplx-res.cloudinary.com,hodca
 protondb.com,hodca
 pstatic.net,hodca
 pstmn.io,hodca
+pusher.com,hodca
 pypi.org,hodca
 qualtrics.com,hodca
 reddit.com,hodca
@@ -359,7 +380,10 @@ rottentomatoes.com,hodca
 rulet.tv,hodca
 russianfood.com,hodca
 sb-cd.com,hodca
+sbox.game,hodca
 scira.ai,hodca
+scribd.com,hodca
+seriesgraph.com,hodca
 shara-mail.com,hodca
 silabs.com,hodca
 sing-box.sagernet.org,hodca
@@ -367,12 +391,14 @@ skillsforall.com,hodca
 smods.ru,hodca
 snikket.org,hodca
 spankbang.com,hodca
+srv.nintendo.net,hodca
 static.wixstatic.com,hodca
 steamos.cloud,hodca
 storybook.js.org,hodca
 strapi.io,hodca
 stripe.com,hodca
 stripecdn.com,hodca
+studyinfinland.fi,hodca
 succurity.com,hodca
 sxyprn.com,hodca
 sxyprn.net,hodca
@@ -381,6 +407,7 @@ tefl.org,hodca
 text.com,hodca
 thelancet.com,hodca
 tiny.cloud,hodca
+transistor.fm,hodca
 tremendous.com,hodca
 trueachievements.com,hodca
 tunemymusic.com,hodca
@@ -396,11 +423,15 @@ use.typekit.net,hodca
 userbenchmark.com,hodca
 utils.docs.rw,hodca
 vecpea.com,hodca
+vivo.com.cn,hodca
 vod.streamgum.com,hodca
+vpnjantit.com,hodca
 vrchat.cloud,hodca
 vrchat.com,hodca
+walletbot.me,hodca
 wayground.com,hodca
 wbinsights.com,hodca
+whoer.net,hodca
 windowsupdate.com,hodca
 wwnd.space,hodca
 xda-developers.com,hodca
@@ -881,6 +912,7 @@ ej.ru,news
 ekhokavkaza.com,news
 espreso.tv,news
 euronews.com,news
+europesays.com,news
 euroradio.fm,news
 eutrp.eu,news
 expres.online,news
@@ -1055,6 +1087,7 @@ jut-su.net,anime
 jut.su,anime
 kara.su,anime
 kemono.su,anime
+manga-chan.me,anime
 mangadex.org,anime
 mangahub.ru,anime
 mangapark.net,anime
@@ -1083,6 +1116,7 @@ hitomi.la,adult
 hqporner.com,adult
 idolcomplex.com,adult
 manyvids.com,adult
+mmcdn.com,adult
 multporn.net,adult
 nhentai.com,adult
 nhentai.net,adult
@@ -1128,6 +1162,7 @@ xvideos.com,adult
 7tv.io,blocked
 abook-club.ru,blocked
 academy.terrasoft.ua,blocked
+adguard-vpn.com,blocked
 adguard.com,blocked
 adminforge.de,blocked
 ahrefs.com,blocked
@@ -1181,6 +1216,9 @@ coldfilm.xyz,blocked
 coursera.org,blocked
 croxyproxy.com,blocked
 cub.red,blocked
+cursor-cdn.com,blocked
+cursor.sh,blocked
+cursorapi.com,blocked
 cyberghostvpn.com,blocked
 deckbrew.xyz,blocked
 decrypt.day,blocked
@@ -1219,6 +1257,11 @@ flisland.net,blocked
 fls.guru,blocked
 forklog.com,blocked
 forum.ru-board.com,blocked
+framer.app,blocked
+framercanvas.com,blocked
+framercdn.com,blocked
+framerstatic.com,blocked
+framerusercontent.com,blocked
 freedomletters.org,blocked
 gagadget.com,blocked
 gamedistribution.com,blocked
@@ -1242,6 +1285,7 @@ iedb.org,blocked
 ign.com,blocked
 iichan.hk,blocked
 ilook.tv,blocked
+incy.cc,blocked
 indiehackers.com,blocked
 infineon.com,blocked
 insearch.site,blocked
@@ -1249,6 +1293,7 @@ interactivebrokers.co.uk,blocked
 ionos.com,blocked
 iptv.online,blocked
 itch.io,blocked
+jetbrains.team,blocked
 jw-russia.org,blocked
 jw.org,blocked
 kamatera.com,blocked
@@ -1329,6 +1374,7 @@ opentrackr.org,blocked
 pages.dev,blocked
 patreon.com,blocked
 patreonusercontent.com,blocked
+paywithmoon.com,blocked
 pb.wtf,blocked
 pimpletv.ru,blocked
 piratbit.top,blocked
@@ -1344,6 +1390,7 @@ proton.me,blocked
 protonvpn.com,blocked
 psiphon.ca,blocked
 pvpessence.com,blocked
+qobuz.com,blocked
 quora.com,blocked
 quora.com.cdn.cloudflare.net,blocked
 radiojar.com,blocked
@@ -1389,8 +1436,11 @@ scryde9.net,blocked
 searchfloor.org,blocked
 seasonvar.ru,blocked
 selezen.org,blocked
+sharefile.com,blocked
+sharefile.io,blocked
 showip.net,blocked
 signal.org,blocked
+sigsauer.com,blocked
 simplex.chat,blocked
 simplex.im,blocked
 simplix.info,blocked
@@ -1414,6 +1464,8 @@ steamstat.info,blocked
 supersliv.biz,blocked
 surfshark.com,blocked
 swissinfo.ch,blocked
+switchroot.org,blocked
+syslog-ng.com,blocked
 te-st.org,blocked
 temu.com,blocked
 thepiratebay.org,blocked
@@ -1443,6 +1495,7 @@ vpngate.net,blocked
 vpngen.org,blocked
 vpnlove.me,blocked
 vpnpay.io,blocked
+wdfiles.com,blocked
 webmd.com,blocked
 webtoons.com,blocked
 wiki.fextralife.com,blocked
@@ -1452,6 +1505,7 @@ zbigz.com,blocked
 zendesk.com,blocked
 gbatemp.net,blocked
 procustodibus.com,blocked
+zerossl.com,blocked
 sephora.fr,ru-ip-blocked
 demdex.net,hodca
 cnstrc.com,ru-ip-blocked

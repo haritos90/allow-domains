@@ -16,6 +16,7 @@ DOMAIN-SUFFIX,abercrombie.com
 DOMAIN-SUFFIX,abook-club.ru
 DOMAIN-SUFFIX,academy.terrasoft.ua
 DOMAIN-SUFFIX,activatica.org
+DOMAIN-SUFFIX,adguard-vpn.com
 DOMAIN-SUFFIX,adguard.com
 DOMAIN-SUFFIX,adidas.com
 DOMAIN-SUFFIX,adminforge.de
@@ -210,6 +211,9 @@ DOMAIN-SUFFIX,crunchyroll.com
 DOMAIN-SUFFIX,csskor.ill.in.ua
 DOMAIN-SUFFIX,cub.red
 DOMAIN-SUFFIX,currenttime.tv
+DOMAIN-SUFFIX,cursor-cdn.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursorapi.com
 DOMAIN-SUFFIX,cursorinfo.co.il
 DOMAIN-SUFFIX,cvedetails.com
 DOMAIN-SUFFIX,cyberghostvpn.com
@@ -308,6 +312,7 @@ DOMAIN-SUFFIX,espreso.tv
 DOMAIN-SUFFIX,etahub.com
 DOMAIN-SUFFIX,etsy.com
 DOMAIN-SUFFIX,euronews.com
+DOMAIN-SUFFIX,europesays.com
 DOMAIN-SUFFIX,euroradio.fm
 DOMAIN-SUFFIX,eutrp.eu
 DOMAIN-SUFFIX,everand.com
@@ -364,7 +369,12 @@ DOMAIN-SUFFIX,forum.netgate.com
 DOMAIN-SUFFIX,forum.ru-board.com
 DOMAIN-SUFFIX,foxnews.com
 DOMAIN-SUFFIX,fragment.com
+DOMAIN-SUFFIX,framer.app
 DOMAIN-SUFFIX,framer.com
+DOMAIN-SUFFIX,framercanvas.com
+DOMAIN-SUFFIX,framercdn.com
+DOMAIN-SUFFIX,framerstatic.com
+DOMAIN-SUFFIX,framerusercontent.com
 DOMAIN-SUFFIX,freedomletters.org
 DOMAIN-SUFFIX,freeimages.com
 DOMAIN-SUFFIX,freemedia.io
@@ -482,6 +492,7 @@ DOMAIN-SUFFIX,ilook.tv
 DOMAIN-SUFFIX,image.tmdb.org
 DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,important-stories.com
+DOMAIN-SUFFIX,incy.cc
 DOMAIN-SUFFIX,indeed.com
 DOMAIN-SUFFIX,indiehackers.com
 DOMAIN-SUFFIX,infineon.com
@@ -508,6 +519,7 @@ DOMAIN-SUFFIX,itsmycity.ru
 DOMAIN-SUFFIX,jamf.com
 DOMAIN-SUFFIX,jetbrains.com
 DOMAIN-SUFFIX,jetbrains.space
+DOMAIN-SUFFIX,jetbrains.team
 DOMAIN-SUFFIX,jnn-pa.googleapis.com
 DOMAIN-SUFFIX,joesandbox.com
 DOMAIN-SUFFIX,jskor.ill.in.ua
@@ -595,6 +607,7 @@ DOMAIN-SUFFIX,mailo.com
 DOMAIN-SUFFIX,make.com
 DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,malwarebytes.com
+DOMAIN-SUFFIX,manga-chan.me
 DOMAIN-SUFFIX,mangadex.org
 DOMAIN-SUFFIX,mangahub.ru
 DOMAIN-SUFFIX,mangapark.net
@@ -629,6 +642,7 @@ DOMAIN-SUFFIX,mignews.com
 DOMAIN-SUFFIX,mintmobile.com
 DOMAIN-SUFFIX,miracleptr.wordpress.com
 DOMAIN-SUFFIX,mixcloud.com
+DOMAIN-SUFFIX,mmcdn.com
 DOMAIN-SUFFIX,modrinth.com
 DOMAIN-SUFFIX,mongodb.com
 DOMAIN-SUFFIX,monolisa.dev
@@ -756,6 +770,7 @@ DOMAIN-SUFFIX,paritydeals.com
 DOMAIN-SUFFIX,patreon.com
 DOMAIN-SUFFIX,patreonusercontent.com
 DOMAIN-SUFFIX,patriot.dp.ua
+DOMAIN-SUFFIX,paywithmoon.com
 DOMAIN-SUFFIX,pb.wtf
 DOMAIN-SUFFIX,pcgamesn.com
 DOMAIN-SUFFIX,pcmag.com
@@ -816,6 +831,7 @@ DOMAIN-SUFFIX,pscp.tv
 DOMAIN-SUFFIX,psiphon.ca
 DOMAIN-SUFFIX,public.parsec.app
 DOMAIN-SUFFIX,pvpessence.com
+DOMAIN-SUFFIX,qobuz.com
 DOMAIN-SUFFIX,qodana.cloud
 DOMAIN-SUFFIX,qoder.com
 DOMAIN-SUFFIX,qt.io
@@ -937,6 +953,8 @@ DOMAIN-SUFFIX,sephora.fr
 DOMAIN-SUFFIX,servarr.com
 DOMAIN-SUFFIX,severreal.org
 DOMAIN-SUFFIX,sfdcopens.com
+DOMAIN-SUFFIX,sharefile.com
+DOMAIN-SUFFIX,sharefile.io
 DOMAIN-SUFFIX,shikimori.me
 DOMAIN-SUFFIX,shikimori.one
 DOMAIN-SUFFIX,shinyhardware.co.uk
@@ -945,6 +963,7 @@ DOMAIN-SUFFIX,shop.gameloft.com
 DOMAIN-SUFFIX,showip.net
 DOMAIN-SUFFIX,sibreal.org
 DOMAIN-SUFFIX,signal.org
+DOMAIN-SUFFIX,sigsauer.com
 DOMAIN-SUFFIX,simplex.chat
 DOMAIN-SUFFIX,simplex.im
 DOMAIN-SUFFIX,simplix.info
@@ -1018,7 +1037,9 @@ DOMAIN-SUFFIX,svtv.org
 DOMAIN-SUFFIX,swagger.io
 DOMAIN-SUFFIX,swapd.co
 DOMAIN-SUFFIX,swissinfo.ch
+DOMAIN-SUFFIX,switchroot.org
 DOMAIN-SUFFIX,synoforum.com
+DOMAIN-SUFFIX,syslog-ng.com
 DOMAIN-SUFFIX,t-invariant.org
 DOMAIN-SUFFIX,t.co
 DOMAIN-SUFFIX,t.me
@@ -1058,6 +1079,7 @@ DOMAIN-SUFFIX,thepiratebay.org
 DOMAIN-SUFFIX,theporndude.com
 DOMAIN-SUFFIX,thetruestory.news
 DOMAIN-SUFFIX,thetvdb.com
+DOMAIN-SUFFIX,threads.com
 DOMAIN-SUFFIX,threads.net
 DOMAIN-SUFFIX,threema.ch
 DOMAIN-SUFFIX,ti.com
@@ -1172,6 +1194,7 @@ DOMAIN-SUFFIX,watchguard.com
 DOMAIN-SUFFIX,watermarkremover.io
 DOMAIN-SUFFIX,wbagora.com
 DOMAIN-SUFFIX,wbgames.com
+DOMAIN-SUFFIX,wdfiles.com
 DOMAIN-SUFFIX,weather.com
 DOMAIN-SUFFIX,webmd.com
 DOMAIN-SUFFIX,webnames.ca
@@ -1238,4 +1261,5 @@ DOMAIN-SUFFIX,zbigz.com
 DOMAIN-SUFFIX,zedge.net
 DOMAIN-SUFFIX,zendesk.com
 DOMAIN-SUFFIX,zerkalo.io
+DOMAIN-SUFFIX,zerossl.com
 DOMAIN-SUFFIX,zona.media
