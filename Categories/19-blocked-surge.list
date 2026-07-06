@@ -8,6 +8,7 @@ DOMAIN-SUFFIX,7tv.app
 DOMAIN-SUFFIX,7tv.io
 DOMAIN-SUFFIX,abook-club.ru
 DOMAIN-SUFFIX,academy.terrasoft.ua
+DOMAIN-SUFFIX,adguard-vpn.com
 DOMAIN-SUFFIX,adguard.com
 DOMAIN-SUFFIX,adminforge.de
 DOMAIN-SUFFIX,ahrefs.com
@@ -61,6 +62,9 @@ DOMAIN-SUFFIX,coldfilm.xyz
 DOMAIN-SUFFIX,coursera.org
 DOMAIN-SUFFIX,croxyproxy.com
 DOMAIN-SUFFIX,cub.red
+DOMAIN-SUFFIX,cursor-cdn.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursorapi.com
 DOMAIN-SUFFIX,cyberghostvpn.com
 DOMAIN-SUFFIX,deckbrew.xyz
 DOMAIN-SUFFIX,decrypt.day
@@ -99,6 +103,11 @@ DOMAIN-SUFFIX,flisland.net
 DOMAIN-SUFFIX,fls.guru
 DOMAIN-SUFFIX,forklog.com
 DOMAIN-SUFFIX,forum.ru-board.com
+DOMAIN-SUFFIX,framer.app
+DOMAIN-SUFFIX,framercanvas.com
+DOMAIN-SUFFIX,framercdn.com
+DOMAIN-SUFFIX,framerstatic.com
+DOMAIN-SUFFIX,framerusercontent.com
 DOMAIN-SUFFIX,freedomletters.org
 DOMAIN-SUFFIX,gagadget.com
 DOMAIN-SUFFIX,gamedistribution.com
@@ -124,6 +133,7 @@ DOMAIN-SUFFIX,iedb.org
 DOMAIN-SUFFIX,ign.com
 DOMAIN-SUFFIX,iichan.hk
 DOMAIN-SUFFIX,ilook.tv
+DOMAIN-SUFFIX,incy.cc
 DOMAIN-SUFFIX,indiehackers.com
 DOMAIN-SUFFIX,infineon.com
 DOMAIN-SUFFIX,insearch.site
@@ -131,6 +141,7 @@ DOMAIN-SUFFIX,interactivebrokers.co.uk
 DOMAIN-SUFFIX,ionos.com
 DOMAIN-SUFFIX,iptv.online
 DOMAIN-SUFFIX,itch.io
+DOMAIN-SUFFIX,jetbrains.team
 DOMAIN-SUFFIX,jw-russia.org
 DOMAIN-SUFFIX,jw.org
 DOMAIN-SUFFIX,kamatera.com
@@ -211,6 +222,7 @@ DOMAIN-SUFFIX,opentrackr.org
 DOMAIN-SUFFIX,pages.dev
 DOMAIN-SUFFIX,patreon.com
 DOMAIN-SUFFIX,patreonusercontent.com
+DOMAIN-SUFFIX,paywithmoon.com
 DOMAIN-SUFFIX,pb.wtf
 DOMAIN-SUFFIX,pimpletv.ru
 DOMAIN-SUFFIX,piratbit.top
@@ -227,6 +239,7 @@ DOMAIN-SUFFIX,proton.me
 DOMAIN-SUFFIX,protonvpn.com
 DOMAIN-SUFFIX,psiphon.ca
 DOMAIN-SUFFIX,pvpessence.com
+DOMAIN-SUFFIX,qobuz.com
 DOMAIN-SUFFIX,quora.com
 DOMAIN-SUFFIX,quora.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,radiojar.com
@@ -272,8 +285,11 @@ DOMAIN-SUFFIX,scryde9.net
 DOMAIN-SUFFIX,searchfloor.org
 DOMAIN-SUFFIX,seasonvar.ru
 DOMAIN-SUFFIX,selezen.org
+DOMAIN-SUFFIX,sharefile.com
+DOMAIN-SUFFIX,sharefile.io
 DOMAIN-SUFFIX,showip.net
 DOMAIN-SUFFIX,signal.org
+DOMAIN-SUFFIX,sigsauer.com
 DOMAIN-SUFFIX,simplex.chat
 DOMAIN-SUFFIX,simplex.im
 DOMAIN-SUFFIX,simplix.info
@@ -297,6 +313,8 @@ DOMAIN-SUFFIX,steamstat.info
 DOMAIN-SUFFIX,supersliv.biz
 DOMAIN-SUFFIX,surfshark.com
 DOMAIN-SUFFIX,swissinfo.ch
+DOMAIN-SUFFIX,switchroot.org
+DOMAIN-SUFFIX,syslog-ng.com
 DOMAIN-SUFFIX,te-st.org
 DOMAIN-SUFFIX,temu.com
 DOMAIN-SUFFIX,thepiratebay.org
@@ -326,6 +344,7 @@ DOMAIN-SUFFIX,vpngate.net
 DOMAIN-SUFFIX,vpngen.org
 DOMAIN-SUFFIX,vpnlove.me
 DOMAIN-SUFFIX,vpnpay.io
+DOMAIN-SUFFIX,wdfiles.com
 DOMAIN-SUFFIX,webmd.com
 DOMAIN-SUFFIX,webtoons.com
 DOMAIN-SUFFIX,wiki.fextralife.com
@@ -333,3 +352,4 @@ DOMAIN-SUFFIX,wilsoncenter.org
 DOMAIN-SUFFIX,windows10spotlight.com
 DOMAIN-SUFFIX,zbigz.com
 DOMAIN-SUFFIX,zendesk.com
+DOMAIN-SUFFIX,zerossl.com
