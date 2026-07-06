@@ -200,13 +200,13 @@ python3 get-subnets.py
 # После редактирования domains.csv или обновления подсетей:
 python3 convert.py all
 git add -A
-git commit -m "Update domains"
+git commit -m "feat: add domains"   # сообщения — по Conventional Commits (feat/fix/chore/docs)
 git push
 ```
 
 # Сравнение списков доменов с upstream
 
-Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). Последняя проверка — коммит `46152bd` (2026-06-01): новых доменов в апстриме нет. Чтобы посмотреть, какие домены добавили в апстрим с тех пор:
+Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). Последняя проверка — коммит `8d45624` (2026-07-06): перенесены 53 новых домена. Чтобы посмотреть, какие домены добавили в апстрим с тех пор:
 
 ```bash
 # Подключить апстрим как второй источник (один раз):
@@ -214,9 +214,9 @@ git remote add upstream https://github.com/itdoginfo/allow-domains.git
 
 # Проверка:
 git fetch upstream
-git diff 46152bd..upstream/main -- 'Categories/*.lst' 'Services/*.lst'
+git diff 8d45624..upstream/main -- 'Categories/*.lst' 'Services/*.lst'
 ```
 
-Нужные домены из вывода переносятся вручную в `domains.csv`. После переноса обновить хеш `46152bd` на актуальный (`git rev-parse --short upstream/main`), чтобы следующее сравнение начиналось с новой точки.
+Нужные домены из вывода переносятся вручную в `domains.csv`. После переноса обновить хеш `8d45624` на актуальный (`git rev-parse --short upstream/main`), чтобы следующее сравнение начиналось с новой точки.
 
 *Meta признана экстремистской и террористической организацией на территории РФ.
