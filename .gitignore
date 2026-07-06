@@ -49,3 +49,6 @@ venv/
 
 # Project-specific
 
+# Личные инструкции для Claude Code — не коммитить, только локально
+CLAUDE.md
+
