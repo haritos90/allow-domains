@@ -52,3 +52,6 @@ venv/
 # Личные инструкции для Claude Code — не коммитить, только локально
 CLAUDE.md
 
+local/
+CLAUDE.local.md
+backlog/
