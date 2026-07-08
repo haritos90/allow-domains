@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "chatgpt.com",
+        "oaiusercontent.com",
+        "openai.com",
+        "sora.com"
+      ]
+    }
+  ]
+}
