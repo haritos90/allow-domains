@@ -39,6 +39,7 @@ Alpha software — not intended for production use. The author sells nothing: no
 |--------|-----------|---------------|
 | Домены / подсети | `.lst` | Podkop, dnsmasq, sing-box, универсальный |
 | Surge / Shadowrocket | `-surge.list` | Shadowrocket (iPhone), Surge, Stash |
+| Sing-box rule-set | `.json` + `.srs` | sing-box, Hiddify |
 
 Для каждого `.lst` файла рядом лежит `-surge.list` — тот же список в формате `DOMAIN-SUFFIX,example.com` (домены) или `IP-CIDR,x.x.x.x/y` / `IP-CIDR6,x::/y` (подсети).
 
@@ -89,6 +90,31 @@ Alpha software — not intended for production use. The author sells nothing: no
 | Все подсети IPv4 | Discord, Meta*, Telegram, Twitter, Google Meet, H.O.D.C.A., Zscaler | 1143 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all-surge.list) |
 | Все подсети IPv6 | Meta*, Telegram, Twitter, H.O.D.C.A., Zscaler | 163 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all-surge.list) |
 | russia-outside | Российские сервисы, доступные только из РФ | 41 | [russia-outside.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside-surge.list) |
+
+# Sing-box rule-set
+
+Для ядра sing-box (в том числе Hiddify) те же списки публикуются как rule-set: исходник `.json` (schema `version: 1`) и скомпилированный бинарь `.srs`. Лежат в каталоге `sing-box/`, имена — по слагу категории:
+
+- **домены**: `<категория>.srs` (напр. `youtube.srs`, `telegram.srs`, `ru-ip-blocked.srs`) + сводный `russia-all.srs`;
+- **подсети** (IPv4 и IPv6 в одном наборе): `<категория>-ip.srs` (напр. `telegram-ip.srs`, `hodca-ip.srs`, `zscaler-ip.srs`) + сводный `subnets-ip.srs`.
+
+`version: 1` — для максимальной совместимости со старыми клиентами (`domain_suffix`/`ip_cidr` в нём есть). Рядом с каждым `.srs` лежит исходный `.json`; `.srs` компилируются автоматически (`convert.py all` при установленном `sing-box`).
+
+Подключение в конфиге sing-box — пример: маршрутизировать Telegram (домены + подсети) в outbound `proxy`:
+
+```json
+"rule_set": [
+  { "type": "remote", "tag": "telegram", "format": "binary", "update_interval": "3d",
+    "url": "https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram.srs",
+    "download_detour": "proxy" },
+  { "type": "remote", "tag": "telegram-ip", "format": "binary", "update_interval": "3d",
+    "url": "https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram-ip.srs",
+    "download_detour": "proxy" }
+],
+"rules": [
+  { "rule_set": ["telegram", "telegram-ip"], "outbound": "proxy" }
+]
+```
 
 # Три сценария блокировки
 

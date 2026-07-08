@@ -10,10 +10,11 @@ IP-подсети: Subnets/IPv4/ и Subnets/IPv6/ (генерируются get-
   python convert.py surge    — пересоздать *-surge.list файлы для Shadowrocket
   python convert.py minus    — пересоздать Minus/ файлы для сплит-тоннелей
   python convert.py subnets  — пересоздать Minus/ subnet-файлы (нужен Subnets/)
+  python convert.py singbox  — пересоздать sing-box/ rule-set (.json + .srs)
   python convert.py all      — выполнить все (рекомендуется)
 """
 
-import csv, ipaddress, os, sys, glob
+import csv, ipaddress, os, sys, glob, json, shutil, subprocess
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOMAINS_CSV = os.path.join(BASE_DIR, "domains.csv")
@@ -55,6 +56,9 @@ SUBNET_CATEGORIES = [
     ("hodca",       "14-hodca",       True),
     ("zscaler",     "20-zscaler",     True),
 ]
+
+# Каталог sing-box rule-set (исходники .json + скомпилированные .srs)
+SINGBOX_DIR = "sing-box"
 
 
 def read_csv():
@@ -199,6 +203,95 @@ def generate_subnet_minus():
             print(f"[subnet-minus] Minus/minus-{prefix}-{v_suffix}.lst: {len(remainder)}")
 
 
+def _singbox_rules(entries):
+    """Разбить записи на domain_suffix / ip_cidr и собрать правила sing-box."""
+    domains, ips = [], []
+    for e in entries:
+        e = e.strip()
+        if not e or e.startswith("#"):
+            continue
+        if e.startswith("."):
+            e = e[1:]
+        (ips if _is_ip_cidr(e) else domains).append(e)
+    rules = []
+    if domains:
+        rules.append({"domain_suffix": sorted(set(domains))})
+    if ips:
+        # v4 численно, затем v6 — детерминированно и читаемо
+        def _ip_key(c):
+            net = ipaddress.ip_network(c, strict=False)
+            return (net.version, int(net.network_address), net.prefixlen)
+        rules.append({"ip_cidr": sorted(set(ips), key=_ip_key)})
+    return rules
+
+
+def _write_singbox_json(name, entries):
+    """Записать sing-box/<name>.json (schema version 1). Вернуть путь либо None."""
+    rules = _singbox_rules(entries)
+    if not rules:
+        return None
+    sb_dir = os.path.join(BASE_DIR, SINGBOX_DIR)
+    os.makedirs(sb_dir, exist_ok=True)
+    path = os.path.join(sb_dir, name + ".json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump({"version": 1, "rules": rules}, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    return path
+
+
+def _compile_singbox(json_paths):
+    """Скомпилировать .srs рядом с каждым .json, если в PATH есть sing-box."""
+    sb = shutil.which("sing-box")
+    if not sb:
+        print("[singbox] sing-box не найден в PATH — .srs пропущены (JSON готов); "
+              "установите sing-box для компиляции .srs")
+        return
+    for jp in json_paths:
+        srs = os.path.splitext(jp)[0] + ".srs"
+        subprocess.run([sb, "rule-set", "compile", "--output", srs, jp], check=True)
+    print(f"[singbox] Скомпилировано .srs: {len(json_paths)}")
+
+
+def generate_singbox():
+    rows = read_csv()
+    by_cat = {}
+    for r in rows:
+        by_cat.setdefault(r["category"], []).append(r["domain"])
+
+    written = []
+    # доменные rule-set по категориям
+    for slug, _ in CATEGORIES:
+        p = _write_singbox_json(slug, by_cat.get(slug, []))
+        if p:
+            written.append(p)
+
+    # сводный список всех доменов (кроме russia-outside)
+    all_domains = [r["domain"] for r in rows if r["category"] not in RUSSIA_ALL_EXCLUDE]
+    p = _write_singbox_json("russia-all", all_domains)
+    if p:
+        written.append(p)
+
+    # IP rule-set по категориям (IPv4 + IPv6 в одном ip_cidr)
+    subnets_dir = os.path.join(BASE_DIR, "Subnets")
+    if os.path.isdir(subnets_dir):
+        for slug, prefix, has_v6 in SUBNET_CATEGORIES:
+            cidrs = _read_subnet_lst(os.path.join(subnets_dir, "IPv4", f"{prefix}.lst"))
+            if has_v6:
+                cidrs |= _read_subnet_lst(os.path.join(subnets_dir, "IPv6", f"{prefix}.lst"))
+            p = _write_singbox_json(f"{slug}-ip", cidrs)
+            if p:
+                written.append(p)
+        # сводный IP rule-set (все подсети, v4 + v6)
+        all_ip = _read_subnet_lst(os.path.join(subnets_dir, "IPv4", "all.lst")) \
+               | _read_subnet_lst(os.path.join(subnets_dir, "IPv6", "all.lst"))
+        p = _write_singbox_json("subnets-ip", all_ip)
+        if p:
+            written.append(p)
+
+    print(f"[singbox] JSON rule-set: {len(written)}")
+    _compile_singbox(written)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "all"
     if cmd == "build":
@@ -209,10 +302,13 @@ if __name__ == "__main__":
         generate_minus()
     elif cmd == "subnets":
         generate_subnet_minus()
+    elif cmd == "singbox":
+        generate_singbox()
     elif cmd == "all":
         build(); print()
         generate_minus(); print()
         generate_subnet_minus(); print()
-        generate_surge()
+        generate_surge(); print()
+        generate_singbox()
     else:
         print(__doc__)

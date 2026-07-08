@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "rbxcdn.com",
+        "rbxinfra.net",
+        "roblox.com",
+        "robloxdev.com"
+      ]
+    }
+  ]
+}
