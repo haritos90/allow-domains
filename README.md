@@ -91,38 +91,56 @@ Alpha software — not intended for production use. The author sells nothing: no
 | Все подсети IPv6 | Meta*, Telegram, Twitter, H.O.D.C.A., Zscaler | 163 | [all.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all-surge.list) |
 | russia-outside | Российские сервисы, доступные только из РФ | 41 | [russia-outside.lst](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside.lst) | [surge](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside-surge.list) |
 
-# Sing-box rule-set
+# Sing-box rule-set (Hiddify)
 
-Для ядра sing-box (в том числе Hiddify) те же списки публикуются как rule-set: исходник `.json` (schema `version: 1`) и скомпилированный бинарь `.srs`. Лежат в каталоге `sing-box/`, имена — по слагу категории:
+Те же списки для ядра **sing-box** (на нём работает Hiddify) — в формате rule-set: бинарь `.srs` (+ исходник `.json`) в каталоге `sing-box/`, схема `version: 1`. Домены → `domain_suffix`, подсети → `ip_cidr`. Имена по категории (как в таблице «Категории» выше): домены — `<категория>.srs` (`youtube.srs`, сводный `russia-all.srs`); подсети (IPv4 и IPv6 в одном файле) — `<категория>-ip.srs` (`telegram-ip.srs`, сводный `subnets-ip.srs`).
 
-- **домены**: `<категория>.srs` (напр. `youtube.srs`, `telegram.srs`, `ru-ip-blocked.srs`) + сводный `russia-all.srs`;
-- **подсети** (IPv4 и IPv6 в одном наборе): `<категория>-ip.srs` (напр. `telegram-ip.srs`, `hodca-ip.srs`, `zscaler-ip.srs`) + сводный `subnets-ip.srs`.
+## Мини-гайд: маршрутизация по спискам
 
-`version: 1` — для максимальной совместимости со старыми клиентами (`domain_suffix`/`ip_cidr` в нём есть). Рядом с каждым `.srs` лежит исходный `.json`; `.srs` компилируются автоматически (`convert.py all` при установленном `sing-box`).
+Правила задаются в секции `route` конфига sing-box (его исполняет Hiddify; отдельного поля под кастомные rule-set в самом приложении нет — правила живут в конфиге). Три шага:
 
-Подключение в конфиге sing-box — пример: маршрутизировать Telegram (домены + подсети) в outbound `proxy`:
+1. **Подключить список** — блок в `rule_set` с raw-URL нужного `.srs`; `tag` — любое имя.
+2. **Направить трафик** — в `rules` перечислить эти теги и задать `outbound`: `proxy` (через VPN) или `direct` (напрямую).
+3. **Остальное** — `final` (напр. `direct`: весь несовпавший трафик идёт напрямую).
+
+`proxy`/`direct` — теги ваших outbound'ов. У сервисов с фиксированными IP подключайте пару `<сервис>` + `<сервис>-ip`, иначе IP-трафик обойдёт правило.
 
 ```json
-"rule_set": [
-  { "type": "remote", "tag": "telegram", "format": "binary", "update_interval": "3d",
-    "url": "https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram.srs",
-    "download_detour": "proxy" },
-  { "type": "remote", "tag": "telegram-ip", "format": "binary", "update_interval": "3d",
-    "url": "https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram-ip.srs",
-    "download_detour": "proxy" }
-],
-"rules": [
-  { "rule_set": ["telegram", "telegram-ip"], "outbound": "proxy" }
-]
+{
+  "route": {
+    "rule_set": [
+      { "type": "remote", "tag": "youtube", "format": "binary", "update_interval": "3d",
+        "url": "https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/youtube.srs",
+        "download_detour": "proxy" },
+      { "type": "remote", "tag": "telegram", "format": "binary", "update_interval": "3d",
+        "url": "https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram.srs",
+        "download_detour": "proxy" },
+      { "type": "remote", "tag": "telegram-ip", "format": "binary", "update_interval": "3d",
+        "url": "https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram-ip.srs",
+        "download_detour": "proxy" }
+    ],
+    "rules": [
+      { "rule_set": ["youtube", "telegram", "telegram-ip"], "outbound": "proxy" }
+    ],
+    "final": "direct"
+  }
+}
 ```
 
-**Все rule-set:**
+Добавить сервис — ещё один блок в `rule_set` (по одному на `.srs`) плюс его тег в `rule_set` внутри `rules`.
+
+- **Всё сразу через прокси** — вместо сервисов подключите сводные `russia-all` (домены) и `subnets-ip` (подсети) → `proxy`.
+- **Наоборот** (весь трафик уже идёт через VPN) — `russia-outside` → `direct`: российские сервисы, доступные только из РФ, пойдут напрямую.
+
+Готовый конфиг с этими rule-set подключается в Hiddify как удалённый профиль по URL (Profiles → New Profile → Remote).
+
+## Все rule-set
 
 <details>
 <summary>Домены</summary>
 
-| Rule-set | Sing-box |
-|----------|----------|
+| Rule-set | Файлы |
+|----------|-------|
 | `youtube` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/youtube.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/youtube.json) |
 | `discord` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/discord.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/discord.json) |
 | `meta` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/meta.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/meta.json) |
@@ -150,8 +168,8 @@ Alpha software — not intended for production use. The author sells nothing: no
 <details>
 <summary>Подсети (IPv4 + IPv6)</summary>
 
-| Rule-set | Sing-box |
-|----------|----------|
+| Rule-set | Файлы |
+|----------|-------|
 | `discord-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/discord-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/discord-ip.json) |
 | `meta-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/meta-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/meta-ip.json) |
 | `telegram-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram-ip.json) |
