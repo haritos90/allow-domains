@@ -116,6 +116,53 @@ Alpha software — not intended for production use. The author sells nothing: no
 ]
 ```
 
+**Все rule-set:**
+
+<details>
+<summary>Домены</summary>
+
+| Rule-set | Sing-box |
+|----------|----------|
+| `youtube` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/youtube.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/youtube.json) |
+| `discord` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/discord.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/discord.json) |
+| `meta` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/meta.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/meta.json) |
+| `telegram` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram.json) |
+| `twitter` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/twitter.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/twitter.json) |
+| `google-ai` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/google-ai.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/google-ai.json) |
+| `google-play` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/google-play.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/google-play.json) |
+| `google-meet` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/google-meet.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/google-meet.json) |
+| `tiktok` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/tiktok.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/tiktok.json) |
+| `hdrezka` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/hdrezka.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/hdrezka.json) |
+| `roblox` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/roblox.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/roblox.json) |
+| `openai` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/openai.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/openai.json) |
+| `claude` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/claude.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/claude.json) |
+| `hodca` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/hodca.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/hodca.json) |
+| `ru-ip-blocked` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/ru-ip-blocked.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/ru-ip-blocked.json) |
+| `news` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/news.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/news.json) |
+| `anime` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/anime.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/anime.json) |
+| `adult` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/adult.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/adult.json) |
+| `blocked` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/blocked.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/blocked.json) |
+| `russia-outside` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/russia-outside.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/russia-outside.json) |
+| `russia-all` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/russia-all.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/russia-all.json) |
+
+</details>
+
+<details>
+<summary>Подсети (IPv4 + IPv6)</summary>
+
+| Rule-set | Sing-box |
+|----------|----------|
+| `discord-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/discord-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/discord-ip.json) |
+| `meta-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/meta-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/meta-ip.json) |
+| `telegram-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/telegram-ip.json) |
+| `twitter-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/twitter-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/twitter-ip.json) |
+| `google-meet-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/google-meet-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/google-meet-ip.json) |
+| `hodca-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/hodca-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/hodca-ip.json) |
+| `zscaler-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/zscaler-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/zscaler-ip.json) |
+| `subnets-ip` | [srs](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/subnets-ip.srs) · [json](https://raw.githubusercontent.com/haritos90/allow-domains/main/sing-box/subnets-ip.json) |
+
+</details>
+
 # Три сценария блокировки
 
 ## Сценарий 1 — В России, заблокировать всё сразу
