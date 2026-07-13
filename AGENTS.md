@@ -24,7 +24,9 @@ Select work with `backlog task list -s "To Do" --plain`. Skip tasks whose
 dependencies are not Done; never select Deferred tasks. Blocked mid-task:
 record the blocker in a comment, return the task to To Do, report; only
 the owner sets Deferred. Never edit files under backlog/ by hand; use the
-CLI. Detailed guidance: `backlog instructions overview`.
+CLI. Done tasks are eventually retired: the file moves unchanged from
+backlog/tasks/ to backlog/completed/ and stops appearing in CLI queries.
+Detailed guidance: `backlog instructions overview`.
 
 ## Decisions
 
@@ -45,7 +47,7 @@ CLI. Detailed guidance: `backlog instructions overview`.
   task states them.
 - Commits: Conventional Commits `type(scope): <imperative summary>
   (task-<id>)`; types feat, fix, refactor, docs, test, chore, perf.
-  Exactly one commit per task. Do not push.
+  Usually one commit per task, but use judgement. Do not push.
 
 ## Language
 
