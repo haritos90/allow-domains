@@ -448,7 +448,6 @@ adidas.com,ru-ip-blocked
 adobe.com,ru-ip-blocked
 adobe.io,ru-ip-blocked
 adobe.net,ru-ip-blocked
-adr.it,ru-ip-blocked
 affinity.studio,ru-ip-blocked
 ai-chat.bsg.brave.com,ru-ip-blocked
 ai.com,ru-ip-blocked
@@ -1587,3 +1586,4 @@ vtb.ru,russia-outside
 widevine-proxy.ott.yandex.ru,russia-outside
 xn--90aijkdmaud0d.xn--p1ai,russia-outside
 yandex.net,russia-outside
+adr.it,hosters-ip-blocked
