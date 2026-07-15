@@ -207,7 +207,7 @@ git push
 
 # Сравнение списков доменов с upstream
 
-Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). Последняя проверка — коммит `8d45624` (2026-07-06): перенесены 53 новых домена. Чтобы посмотреть, какие домены добавили в апстрим с тех пор:
+Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). Последняя проверка — коммит `5c285ec` (2026-07-15): новых доменов нет (в апстриме только обновление подсетей). Чтобы посмотреть, какие домены добавили в апстрим с тех пор:
 
 ```bash
 # Подключить апстрим как второй источник (один раз):
@@ -215,10 +215,10 @@ git remote add upstream https://github.com/itdoginfo/allow-domains.git
 
 # Проверка:
 git fetch upstream
-git diff 8d45624..upstream/main -- 'Categories/*.lst' 'Services/*.lst'
+git diff 5c285ec..upstream/main -- 'Categories/*.lst' 'Services/*.lst'
 ```
 
-Нужные домены из вывода переносятся вручную в `domains.csv`. После переноса обновить хеш `8d45624` на актуальный (`git rev-parse --short upstream/main`), чтобы следующее сравнение начиналось с новой точки.
+Нужные домены из вывода переносятся вручную в `domains.csv`. После переноса обновить хеш `5c285ec` на актуальный (`git rev-parse --short upstream/main`), чтобы следующее сравнение начиналось с новой точки.
 
 # Sing-box / Hiddify
 
