@@ -40,6 +40,7 @@ CATEGORIES = [
     ("adult",        "Categories/18-adult"),
     ("blocked",         "Categories/19-blocked"),
     ("russia-outside",  "Russia/russia-outside"),
+    ("hosters-ip-blocked", "Categories/21-hosters-ip-blocked"),
 ]
 CATEGORY_PATH = {slug: path for slug, path in CATEGORIES}
 
