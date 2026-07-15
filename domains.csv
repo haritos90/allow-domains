@@ -621,6 +621,7 @@ ikea.com,ru-ip-blocked
 image.tmdb.org,ru-ip-blocked
 imgur.com,ru-ip-blocked
 indeed.com,ru-ip-blocked
+inditex.com,ru-ip-blocked
 install.launcher.omniverse.nvidia.com,ru-ip-blocked
 intel.com,ru-ip-blocked
 intel.de,ru-ip-blocked
@@ -720,6 +721,8 @@ openh264.org,ru-ip-blocked
 openrouter.ai,ru-ip-blocked
 oracle.com,ru-ip-blocked
 oraclecloud.com,ru-ip-blocked
+oysho.com,ru-ip-blocked
+oysho.net,ru-ip-blocked
 paddle.com,ru-ip-blocked
 paddlestatus.com,ru-ip-blocked
 pandasecurity.com,ru-ip-blocked
