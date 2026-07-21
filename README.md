@@ -7,9 +7,7 @@
 Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). В оригинале нельзя распределить сервисы по разным секциям Podkop — здесь это реализовано через Minus-файлы либо вручную собирая группы из непересакающихся доменов.  
 Списки сделаны для роутеров под OpenWRT (Podkop/sing-box) и iPhone (Shadowrocket).
 
----
-
-## Legal Notice
+### Legal Notice
 
 This software is intended for development, testing, and research purposes only.
 
@@ -21,19 +19,13 @@ The author does not provide any guarantees regarding:
 
 Users are solely responsible for how they use this software and must comply with applicable laws.
 
-## Usage Restrictions
+### Usage Restrictions
 
 This software is not intended to be used for bypassing access restrictions or violating applicable laws. The author does not support or encourage such use.
 
 ---
 
-## Status
-
-Alpha software — not intended for production use. The author sells nothing: not the app, access, configurations, subscriptions, or support; anything given is a voluntary donation.
-
----
-
-# Форматы файлов
+## Форматы файлов
 
 | Формат | Расширение | Совместимость |
 |--------|-----------|---------------|
@@ -43,7 +35,7 @@ Alpha software — not intended for production use. The author sells nothing: no
 
 Рядом с каждым `.lst` лежат те же записи в других форматах: `-surge.list` (Shadowrocket/Surge) и sing-box rule-set `.srs` с исходным `.json`. Surge-формат — это `DOMAIN-SUFFIX,example.com` (домены) или `IP-CIDR,x.x.x.x/y` / `IP-CIDR6,x::/y` (подсети).
 
-# Как устроены списки
+## Как устроены списки
 
 Списки состоят из групп доменов и связанных с ними подсетей.
 
@@ -59,7 +51,7 @@ Alpha software — not intended for production use. The author sells nothing: no
 
 Для категорий, к которым нет списков подсетей, блокировка возможна просто по доменному имени.
 
-# Категории
+## Категории
 
 | # | Категория | Описание | lst | surge | srs | json |
 |---|-----------|----------|-----|-------|-----|------|
@@ -85,7 +77,7 @@ Alpha software — not intended for production use. The author sells nothing: no
 | 20 | Zscaler | Zscaler Client Connector (ZIA/ZPA) — узлы и брокеры, только по IP | [ipv4](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/20-zscaler.lst) · [ipv6](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/20-zscaler.lst) | [ipv4](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/20-zscaler-surge.list) · [ipv6](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/20-zscaler-surge.list) | [ipv4](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/20-zscaler.srs) · [ipv6](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/20-zscaler.srs) | [ipv4](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/20-zscaler.json) · [ipv6](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/20-zscaler.json) |
 | 21 | Hosters-IP-Blocked | Сайты, блокирующие IP хостингов и дата-центров — нужен чистый резидентный не-РФ адрес | [domains](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/21-hosters-ip-blocked.lst) | [domains](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/21-hosters-ip-blocked-surge.list) | [domains](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/21-hosters-ip-blocked.srs) | [domains](https://raw.githubusercontent.com/haritos90/allow-domains/main/Categories/21-hosters-ip-blocked.json) |
 
-# Сводные списки
+## Сводные списки
 
 | Список | Описание | lst | surge | srs | json |
 |--------|----------|-----|-------|-----|------|
@@ -93,9 +85,9 @@ Alpha software — not intended for production use. The author sells nothing: no
 | Все подсети | Discord, Meta*, Telegram, Twitter, Google Meet, H.O.D.C.A., Zscaler | [ipv4](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.lst) · [ipv6](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst) | [ipv4](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all-surge.list) · [ipv6](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all-surge.list) | [ipv4](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.srs) · [ipv6](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.srs) | [ipv4](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.json) · [ipv6](https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.json) |
 | russia-outside | Российские сервисы, доступные только из РФ | [domains](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside.lst) | [domains](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside-surge.list) | [domains](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside.srs) | [domains](https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside.json) |
 
-# Три сценария блокировки
+## Три сценария блокировки
 
-## Сценарий 1 — В России, заблокировать всё сразу
+### Сценарий 1 — В России, заблокировать всё сразу
 
 Чтобы заблокировать всё, в Podkop в секции main в поле **Remote Domain Lists** указать **russia-all.lst** (1456 доменов), в connection type выбрать Block:
 
@@ -112,7 +104,7 @@ https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv4/all.
 https://raw.githubusercontent.com/haritos90/allow-domains/main/Subnets/IPv6/all.lst
 ```
 
-## Сценарий 2 — В России, блокировать раздельно
+### Сценарий 2 — В России, блокировать раздельно
 
 Когда на определенный сервис нужна отдельная секции Podkop. Важно: для сервисов с IP-подсетями нужно настраивать оба поля — **Remote Domain Lists** и **Remote Subnet Lists**. Если указать только домены, трафик приложения, которое использует фиксированные IP, обойдёт правило.
 
@@ -181,7 +173,7 @@ Minus-файлы обеспечивают согласованность: дом
 
 </details>
 
-## Сценарий 3 — Вне России, ограничить себе доступ к российскому интернету
+### Сценарий 3 — Вне России, ограничить себе доступ к российскому интернету
 
 Госуслуги, Ozon, РЖД — доступны только из российских IP. Чтобы их добровольно заблокировать, в поле **Remote Domain Lists** указать **russia-outside.lst** (37 доменов):
 
@@ -189,11 +181,11 @@ Minus-файлы обеспечивают согласованность: дом
 https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-outside.lst
 ```
 
-# Как найти все домены сервиса
+## Как найти все домены сервиса
 
 Подробная инструкция: https://itdog.info/analiziruem-trafik-i-opredelyaem-domeny-kotorye-ispolzuyut-sajty-i-prilozheniya/
 
-# Как обновлять
+## Как обновлять
 
 `domains.csv` — **единственный файл**, который нужно редактировать: все категории, включая `russia-outside`. Остальные файлы (`.lst`, `-surge.list`, `.srs`, `.json`) генерируются автоматически.
 
@@ -208,7 +200,7 @@ git commit -m "feat: add domains"   # сообщения — по Conventional C
 git push
 ```
 
-# Сравнение списков доменов с upstream
+## Сравнение списков доменов с upstream
 
 Проект основан на [itdoginfo/allow-domains](https://github.com/itdoginfo/allow-domains). Последняя проверка — коммит `5c285ec` (2026-07-15): новых доменов нет (в апстриме только обновление подсетей). Чтобы посмотреть, какие домены добавили в апстрим с тех пор:
 
@@ -223,7 +215,7 @@ git diff 5c285ec..upstream/main -- 'Categories/*.lst' 'Services/*.lst'
 
 Нужные домены из вывода переносятся вручную в `domains.csv`. После переноса обновить хеш `5c285ec` на актуальный (`git rev-parse --short upstream/main`), чтобы следующее сравнение начиналось с новой точки.
 
-# Sing-box / Hiddify
+## Sing-box / Hiddify
 
 Списки доступны как sing-box rule-set: `.srs` (для клиента) и `.json` (исходник) — рядом с каждым `.lst`, в тех же папках и с теми же именами. Подключаются в секции `route` конфига sing-box, который исполняет Hiddify (отдельного поля под кастомные rule-set в самом приложении нет — правила задаются в конфиге).
 
