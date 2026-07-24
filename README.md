@@ -184,7 +184,7 @@ https://raw.githubusercontent.com/haritos90/allow-domains/main/Russia/russia-out
 
 ## Как найти все домены сервиса
 
-Подробная инструкция: [https://itdog.info/analiziruem-trafik-i-opredelyaem-domeny-kotorye-ispolzuyut-sajty-i-prilozheniya/](здесь)
+Подробная инструкция: [здесь](https://itdog.info/analiziruem-trafik-i-opredelyaem-domeny-kotorye-ispolzuyut-sajty-i-prilozheniya/)
 
 ## Как обновлять
 
