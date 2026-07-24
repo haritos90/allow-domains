@@ -21,7 +21,6 @@ $RECYCLE.BIN/
 # Editors / IDEs / tooling
 .idea/
 .vscode/
-.claude/
 *.swp
 *.swo
 *.orig
@@ -49,9 +48,4 @@ venv/
 
 # Project-specific
 
-# Личные инструкции для Claude Code — не коммитить, только локально
-CLAUDE.md
-
 local/
-CLAUDE.local.md
-backlog/
