@@ -54,7 +54,6 @@ DOMAIN-SUFFIX,convertunits.com
 DOMAIN-SUFFIX,crdroid.net
 DOMAIN-SUFFIX,curseforge.com
 DOMAIN-SUFFIX,customfw.xyz
-DOMAIN-SUFFIX,d4c.nintendo.net
 DOMAIN-SUFFIX,demdex.net
 DOMAIN-SUFFIX,desec.io
 DOMAIN-SUFFIX,dev.to
@@ -64,7 +63,6 @@ DOMAIN-SUFFIX,discourse-cdn.com
 DOMAIN-SUFFIX,dockhand.pro
 DOMAIN-SUFFIX,dodopayments.com
 DOMAIN-SUFFIX,dosvid.tk
-DOMAIN-SUFFIX,dragons.nintendo.net
 DOMAIN-SUFFIX,drpool.io
 DOMAIN-SUFFIX,ds-servers.com
 DOMAIN-SUFFIX,dvprogram.state.gov
@@ -73,7 +71,6 @@ DOMAIN-SUFFIX,easysimplesolution.net
 DOMAIN-SUFFIX,edx.org
 DOMAIN-SUFFIX,elsevier.com
 DOMAIN-SUFFIX,elsevier.com.cdn.cloudflare.net
-DOMAIN-SUFFIX,eshop.nintendo.net
 DOMAIN-SUFFIX,ezgif.com
 DOMAIN-SUFFIX,fandom.com
 DOMAIN-SUFFIX,fedoraproject.org
@@ -149,6 +146,7 @@ DOMAIN-SUFFIX,nextcloud.com
 DOMAIN-SUFFIX,nextdirect.com
 DOMAIN-SUFFIX,nexusmods.com
 DOMAIN-SUFFIX,nintendo.com
+DOMAIN-SUFFIX,nintendo.net
 DOMAIN-SUFFIX,nixos.org
 DOMAIN-SUFFIX,nuxt.com
 DOMAIN-SUFFIX,nvidia.com
@@ -198,7 +196,6 @@ DOMAIN-SUFFIX,skillsforall.com
 DOMAIN-SUFFIX,smods.ru
 DOMAIN-SUFFIX,snikket.org
 DOMAIN-SUFFIX,spankbang.com
-DOMAIN-SUFFIX,srv.nintendo.net
 DOMAIN-SUFFIX,static.wixstatic.com
 DOMAIN-SUFFIX,steamos.cloud
 DOMAIN-SUFFIX,storybook.js.org
