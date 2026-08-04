@@ -207,7 +207,6 @@ DOMAIN-SUFFIX,cursorinfo.co.il
 DOMAIN-SUFFIX,customfw.xyz
 DOMAIN-SUFFIX,cvedetails.com
 DOMAIN-SUFFIX,cyxymu.info
-DOMAIN-SUFFIX,d4c.nintendo.net
 DOMAIN-SUFFIX,daemon-tools.cc
 DOMAIN-SUFFIX,dailylviv.com
 DOMAIN-SUFFIX,danbooru.donmai.us
@@ -275,7 +274,6 @@ DOMAIN-SUFFIX,dovod.online
 DOMAIN-SUFFIX,download3.omnissa.com
 DOMAIN-SUFFIX,downloads.intercomcdn.com
 DOMAIN-SUFFIX,doxa.team
-DOMAIN-SUFFIX,dragons.nintendo.net
 DOMAIN-SUFFIX,drpool.io
 DOMAIN-SUFFIX,ds-servers.com
 DOMAIN-SUFFIX,ducati.com
@@ -298,7 +296,6 @@ DOMAIN-SUFFIX,elsevier.com
 DOMAIN-SUFFIX,elsevier.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,eneba.com
 DOMAIN-SUFFIX,eporner.com
-DOMAIN-SUFFIX,eshop.nintendo.net
 DOMAIN-SUFFIX,espreso.tv
 DOMAIN-SUFFIX,etahub.com
 DOMAIN-SUFFIX,etsy.com
@@ -646,6 +643,7 @@ DOMAIN-SUFFIX,nhentai.net
 DOMAIN-SUFFIX,ni.com
 DOMAIN-SUFFIX,nike.com
 DOMAIN-SUFFIX,nintendo.com
+DOMAIN-SUFFIX,nintendo.net
 DOMAIN-SUFFIX,nitropdf.com
 DOMAIN-SUFFIX,nixos.org
 DOMAIN-SUFFIX,nordaccount.com
@@ -936,7 +934,6 @@ DOMAIN-SUFFIX,spotify.com
 DOMAIN-SUFFIX,sputnikipogrom.com
 DOMAIN-SUFFIX,squadbustersgame.com
 DOMAIN-SUFFIX,squareup.com
-DOMAIN-SUFFIX,srv.nintendo.net
 DOMAIN-SUFFIX,static.wixstatic.com
 DOMAIN-SUFFIX,steamos.cloud
 DOMAIN-SUFFIX,stitch.withgoogle.com
