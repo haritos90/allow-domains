@@ -3,7 +3,8 @@
   "rules": [
     {
       "domain_suffix": [
-        "adr.it"
+        "adr.it",
+        "esportsworldcup.com"
       ]
     }
   ]
