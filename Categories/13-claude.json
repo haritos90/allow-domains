@@ -5,7 +5,12 @@
       "domain_suffix": [
         "anthropic.com",
         "claude.ai",
-        "claude.com"
+        "claude.app",
+        "claude.com",
+        "claude.site",
+        "claudemcpclient.com",
+        "claudemcpcontent.com",
+        "claudeusercontent.com"
       ]
     }
   ]
