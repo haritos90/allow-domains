@@ -1423,6 +1423,7 @@ DOMAIN-SUFFIX,viber.com
 DOMAIN-SUFFIX,vice.com
 DOMAIN-SUFFIX,vine.co
 DOMAIN-SUFFIX,visualcapitalist.com
+DOMAIN-SUFFIX,visualstudio.com
 DOMAIN-SUFFIX,vivo.com.cn
 DOMAIN-SUFFIX,vmware.com
 DOMAIN-SUFFIX,vndb.org
@@ -1439,6 +1440,10 @@ DOMAIN-SUFFIX,vpnlove.me
 DOMAIN-SUFFIX,vpnpay.io
 DOMAIN-SUFFIX,vrchat.cloud
 DOMAIN-SUFFIX,vrchat.com
+DOMAIN-SUFFIX,vsassets.io
+DOMAIN-SUFFIX,vscode-cdn.net
+DOMAIN-SUFFIX,vscode-unpkg.net
+DOMAIN-SUFFIX,vscode.download.prss.microsoft.com
 DOMAIN-SUFFIX,vyos.io
 DOMAIN-SUFFIX,w.atwiki.jp
 DOMAIN-SUFFIX,wa.me
